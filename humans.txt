@@ -1,0 +1,17 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Roozbeh Sharifnasab -- author
+
+# THANKS
+    Parham Alvani
+    Reza Ferdosi
+    Mohammad Movahhed
+    Parsa Hejabi
+
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    JS

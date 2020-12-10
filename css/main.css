@@ -1,0 +1,67 @@
+
+body {
+    /*
+     * handle background properties
+     * filename is bg.jpg in img folder
+     */
+    background-image: url('../img/bg.jpg');
+    /*
+     * we do not want our background ro repeat
+     * instead we want it to appear as a cover 
+     */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*
+     * handle small displays: zoom to conter
+     */
+    background-position: center;
+}
+
+
+/*
+ * hidden class 
+ * after loading complete 
+ * we set the loading test to this class 
+ * so it will be hidden from user :)
+ */
+.hidden {
+    display:none;
+}
+
+
+/**
+ * creating loading page 
+ * for "loadingStuff" class
+ * special thankss to w3schools
+ * https://www.w3schools.com/howto/howto_css_loader.asp
+ */
+.loadingStuff {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-bottom: 16px solid red; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+/*
+ * let's center an element 
+ * and select with class 
+ */
+.center {
+  position:absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+}

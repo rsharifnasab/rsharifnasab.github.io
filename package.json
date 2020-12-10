@@ -1,0 +1,17 @@
+{
+  "name": "ie-midterm",
+  "version": "1.0.0",
+  "description": "my internet engineering midterm (html css js)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "roozbeh sharifnasab",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
+  }
+}
