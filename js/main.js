@@ -133,8 +133,31 @@ function stopLoading() {
 /**
 */
 function shipToHtmlFull(ship) {
+  const neededKeys = ['name', 'manufacturer', 'length',
+    'max_atmosphering_speed', 'cargo_capacity', 'hyperdrive_rating'];
+  const elem = document.createElement('dl');
 
+  neededKeys.forEach((key) => {
+    const dt = document.createElement('dt');
+    dt.innerHTML = key;
+    elem.appendChild(dt);
 
+    const dd = document.createElement('dd');
+    dd.innerHTML = `-> ${ship[key]}`;
+    elem.appendChild(dd);
+  });
+
+  const dt = document.createElement('dt');
+  dt.innerHTML = 'films';
+  elem.appendChild(dt);
+
+  ship.films.forEach((film) => {
+    const dd = document.createElement('dd');
+    dd.innerHTML = ` -> ${film.title}`;
+    elem.appendChild(dd);
+  });
+
+  return elem;
 }
 
 /**
@@ -144,8 +167,8 @@ function createLiOnClick(ship) {
   return (event)=>{
     const element = shipToHtmlFull(ship);
 
-
-    document.write(element); // TODO
+    parent.innerHTML = '';
+    parent.appendChild(element); // TODO
   };
 }
 
@@ -154,7 +177,7 @@ function createLiOnClick(ship) {
 function shipToHtmlBrief(ship, ind) {
   const elem = document.createElement('li');
   elem.className = 'shipItem';
-  elem.innerHTML = `${ind+1} ${ship.title}`;
+  elem.innerHTML = `${ind+1} ${ship.name}`;
   elem.onclick = createLiOnClick(ship);
 
   return elem;
