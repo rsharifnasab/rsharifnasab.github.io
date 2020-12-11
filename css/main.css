@@ -73,8 +73,7 @@ body {
     z-index: 15;
     top: 50%;
     left: 50%;
-    margin: -100px 0 0 -150px
-
+    margin: -100px 0 0 -150px;
 }
 
 /**
@@ -100,4 +99,23 @@ body {
     padding: 25px;
     background-color: rgba(233,233,158, 0.3);
     width: 80%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#descBox, #shipListID{
+  float: center;
+  margin: 40px;
+}
+.shipList {
+  float: left;
+  margin-right: 5px;
+}
+
+.descID {
+  float: right;
+  margin-right: 5px;
 }

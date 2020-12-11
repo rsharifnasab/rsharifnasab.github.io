@@ -128,7 +128,7 @@ function stopLoading() {
   [...document
       .getElementsByClassName('loadingStuff')]
       .forEach((ls) => ls.classList.add('hidden'));
-  d = document
+  document
       .getElementById('dataBoxID')
       .classList
       .remove('hidden');
@@ -206,7 +206,7 @@ function shipToHtmlBrief(ship, ind) {
 /**
 */
 function createItemElements(shipsData) {
-  const parent = document.getElementById('shipList');
+  const parent = document.getElementById('shipListID');
 
   shipsData.forEach((ship, i) => {
     parent.appendChild(shipToHtmlBrief(ship, i));
