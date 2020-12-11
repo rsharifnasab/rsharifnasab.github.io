@@ -1,4 +1,9 @@
 
+/**
+ * add background
+ * for body 
+ * and center it
+ */
 body {
     /*
      * handle background properties
@@ -26,14 +31,14 @@ body {
  * so it will be hidden from user :)
  */
 .hidden {
-    display:none;
+   display:none;
 }
 
 
 /**
  * creating loading page 
  * for "loadingStuff" class
- * special thankss to w3schools
+ * special thanks to w3schools
  * https://www.w3schools.com/howto/howto_css_loader.asp
  */
 .loadingStuff {
@@ -46,6 +51,10 @@ body {
   animation: spin 2s linear infinite;
 }
 
+/**
+ * animation for above block 
+ * (loading stuff)
+ */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
