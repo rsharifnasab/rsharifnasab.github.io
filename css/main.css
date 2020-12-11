@@ -46,6 +46,11 @@ body {
   animation: spin 2s linear infinite;
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /*
  * let's center an element 
  * and select with class 
@@ -59,9 +64,16 @@ body {
 
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+/**
+ * style for each item
+ * in our 10 itemer 
+ * ship list
+ */
+.shipItem {
+    /**
+     * change mouse pointer 
+     * to hand, because it is link :)
+     */
+    cursor:pointer;
 
 }
