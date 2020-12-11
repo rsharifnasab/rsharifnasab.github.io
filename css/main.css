@@ -86,36 +86,54 @@ body {
      * change mouse pointer
      * to hand, because it is link :)
      */
-    cursor: pointer;
-
+cursor: pointer;
 }
 
 /**
  * style for center box
  * that contain information
- *
  */
 .dataBox {
+    /* transparent box in front of bg */
     padding: 25px;
     background-color: rgba(233,233,158, 0.3);
     width: 80%;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+
+    /**
+     * set positon for data window 
+     * in middle of screen :D
+     */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-#descBox, #shipListID{
-  float: center;
-  margin: 40px;
+/**
+ * set margin for inner right box
+ * and inner left box
+ * and limit its size
+ */
+.shipList,
+.descBox {
+    margin: 20px;
+    margin-right: 5px;
+    width: 40%;
 }
+
+/**
+ * set place of lisr of ships
+ * in left
+ */
 .shipList {
-  float: left;
-  margin-right: 5px;
+    float: left;
 }
 
-.descID {
-  float: right;
-  margin-right: 5px;
+/**
+ * set place for the description part
+ * in left
+ */
+.descBox {
+    float: right;
 }

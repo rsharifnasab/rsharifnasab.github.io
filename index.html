@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-
 <head>
     <meta charset="utf-8">
-    <title>Starwars Info</title>
+    <title>Starwars starships Info</title>
 
     <meta name="description" content="roozbeh sharifnasab IE midterm">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,18 +14,16 @@
 </head>
 
 <body>
+    <!-- the div just for loading -->
     <div id="load" class="loadingStuff center"></div>
+
+    <!-- main div that contain data -->
     <div id="dataBoxID" class="dataBox hidden">
-        <div id="shipListID" class="shipList">
-
-        </div>
-        <div id="descBox" class="descID">
-
-        </div>
-
+        <!-- left part: list -->
+        <div id="shipListID" class="shipList"></div>
+        <!-- right part: descritpnio -->
+        <div id="descID" class="descBox"></div>
     </div>
-
-
 
     <!-- add js after the body in order to not block page loading to handle js-->
     <script src="js/main.js"></script>

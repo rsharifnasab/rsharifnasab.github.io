@@ -14,10 +14,13 @@ const maxAPITries = Math.floor(neededShips * 2.5);
 const totalFilms = 6;
 
 /**
- * in allShipe, we save the fetched data
- * and use it on click
- */
-const allShips = [];
+ * throw error if there is no connection
+ * to handle it with catchNoConnection
+ * @see catchNoConnection
+*/
+function thrNoConnection() {
+  throw new Error('no connection');
+}
 
 /**
  * if all of our promises fail,
@@ -26,7 +29,7 @@ const allShips = [];
  * and show an error message in red
  * @param {String} err - an error message showing that why fetch failed
  */
-function noConnection(err) {
+function catchNoConnection(err) {
   document.write(`<h2 style="color:red;">\
         cannot connect to the server because of : ${err}\
         </h2>`);
@@ -110,9 +113,6 @@ function connectShipsFilms(mat) {
     ship.films = ship.films.map((filmUrl) => films[filmUrl]);
   });
 
-  // also save data to global variable
-  allShips.push(...ships);
-
   return Promise.resolve(ships);
 }
 
@@ -143,7 +143,7 @@ function stopLoading() {
 function shipToHtmlFull(ship) {
   // which keys should be added to html
   const neededKeys = ['name', 'manufacturer', 'length',
-    'max_atmosphering_speed', 'cargo_capacity', 'hyperdrive_rating'];
+    'cargo_capacity', 'hyperdrive_rating'];
 
   // create a description list to caintain all info
   const elem = document.createElement('dl');
@@ -182,7 +182,7 @@ function shipToHtmlFull(ship) {
  * @return {Function} onclick function
 */
 function createLiOnClick(ship) {
-  const parent = document.getElementById('descBox');
+  const parent = document.getElementById('descID');
   return (event)=>{
     const element = shipToHtmlFull(ship);
 
@@ -192,18 +192,24 @@ function createLiOnClick(ship) {
 }
 
 /**
- *
+ * create link from ship name
+ * and set it's "onclick"
+ * @param {Object} ship - ship info
+ * @return {HTMLElement} - created elem
 */
-function shipToHtmlBrief(ship, ind) {
+function shipToHtmlBrief(ship) {
   const elem = document.createElement('li');
   elem.className = 'shipItem';
-  elem.innerHTML = `${ind+1} ${ship.name}`;
+  elem.innerHTML = `${ship.name}`;
   elem.onclick = createLiOnClick(ship);
 
   return elem;
 }
 
 /**
+ * create  list elements from list of ships
+ * after loading complete,
+ * @param {Array.<Object>} shipsData - array containing ships
 */
 function createItemElements(shipsData) {
   const parent = document.getElementById('shipListID');
@@ -211,9 +217,6 @@ function createItemElements(shipsData) {
   shipsData.forEach((ship, i) => {
     parent.appendChild(shipToHtmlBrief(ship, i));
   });
-
-
-  stopLoading();
 }
 
 /**
@@ -227,23 +230,27 @@ function main() {
   * and remove 404s
   */
   const shipsPromises = sendRequests(shipsUrl, maxAPITries)
-      .then((r) => getAcceptedsJsons(r, neededShips), noConnection)
+      .then((r) => getAcceptedsJsons(r, neededShips), thrNoConnection)
       .then(consumeShipJsons);
 
   /**
    * send requests for all films
    */
   const filmPromises = sendRequests(filmsUrl, totalFilms)
-      .then((r) => getAcceptedsJsons(r, totalFilms), noConnection)
+      .then((r) => getAcceptedsJsons(r, totalFilms), thrNoConnection)
       .then(consumeFilmJsons);
 
   /**
    * aggregate responses:
    * connect films with ships
+   * hide loading animation
    */
   Promise.all([shipsPromises, filmPromises])
       .then(connectShipsFilms)
-      .then(createItemElements);
+      .then(createItemElements)
+      .then(stopLoading)
+      .catch(catchNoConnection);
 }
 
+// let's go
 main();
