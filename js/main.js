@@ -131,12 +131,20 @@ function stopLoading() {
 }
 
 /**
+ * create full html element (dl)
+ * that contains all needed information
+ * @param {Object} ship - needed json
+ * @return {HTMLElement} created element
 */
 function shipToHtmlFull(ship) {
+  // which keys should be added to html
   const neededKeys = ['name', 'manufacturer', 'length',
     'max_atmosphering_speed', 'cargo_capacity', 'hyperdrive_rating'];
+
+  // create a description list to caintain all info
   const elem = document.createElement('dl');
 
+  // add all key, values except films
   neededKeys.forEach((key) => {
     const dt = document.createElement('dt');
     dt.innerHTML = key;
@@ -147,13 +155,14 @@ function shipToHtmlFull(ship) {
     elem.appendChild(dd);
   });
 
+  // add films too
   const dt = document.createElement('dt');
   dt.innerHTML = 'films';
   elem.appendChild(dt);
 
   ship.films.forEach((film) => {
     const dd = document.createElement('dd');
-    dd.innerHTML = ` -> ${film.title}`;
+    dd.innerHTML = `=> ${film.title}`;
     elem.appendChild(dd);
   });
 
@@ -161,6 +170,12 @@ function shipToHtmlFull(ship) {
 }
 
 /**
+ * create on click function
+ * for list items,
+ * on click have information about that
+ * and set it
+ * @param {Object} ship - needed information
+ * @return {Function} onclick function
 */
 function createLiOnClick(ship) {
   const parent = document.getElementById('descBox');
@@ -168,11 +183,12 @@ function createLiOnClick(ship) {
     const element = shipToHtmlFull(ship);
 
     parent.innerHTML = '';
-    parent.appendChild(element); // TODO
+    parent.appendChild(element);
   };
 }
 
 /**
+ *
 */
 function shipToHtmlBrief(ship, ind) {
   const elem = document.createElement('li');

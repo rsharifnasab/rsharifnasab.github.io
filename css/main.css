@@ -21,6 +21,9 @@ body {
      * handle small displays: zoom to conter
      */
     background-position: center;
+
+    // set text color!
+    color: white;
 }
 
 
