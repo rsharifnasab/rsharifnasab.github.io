@@ -128,6 +128,10 @@ function stopLoading() {
   [...document
       .getElementsByClassName('loadingStuff')]
       .forEach((ls) => ls.classList.add('hidden'));
+  d = document
+      .getElementById('dataBoxID')
+      .classList
+      .remove('hidden');
 }
 
 /**

@@ -1,7 +1,6 @@
-
 /**
  * add background
- * for body 
+ * for body
  * and center it
  */
 body {
@@ -12,7 +11,7 @@ body {
     background-image: url('../img/bg.jpg');
     /*
      * we do not want our background ro repeat
-     * instead we want it to appear as a cover 
+     * instead we want it to appear as a cover
      */
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -22,70 +21,83 @@ body {
      */
     background-position: center;
 
-    // set text color!
+    /* set text color! */
     color: white;
+
+    margin: 0;
 }
 
 
 /*
- * hidden class 
- * after loading complete 
- * we set the loading test to this class 
+ * hidden class
+ * after loading complete
+ * we set the loading test to this class
  * so it will be hidden from user :)
  */
 .hidden {
-   display:none;
+    display:none;
 }
 
 
 /**
- * creating loading page 
+ * creating loading page
  * for "loadingStuff" class
  * special thanks to w3schools
  * https://www.w3schools.com/howto/howto_css_loader.asp
  */
 .loadingStuff {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-bottom: 16px solid red; 
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-bottom: 16px solid red;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
 }
 
 /**
- * animation for above block 
+ * animation for above block
  * (loading stuff)
  */
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /*
- * let's center an element 
- * and select with class 
+ * let's center an element
+ * and select with class
  */
 .center {
-  position:absolute;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px
+    position:absolute;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px
 
 }
 
 /**
  * style for each item
- * in our 10 itemer 
+ * in our 10 itemer
  * ship list
  */
 .shipItem {
     /**
-     * change mouse pointer 
+     * change mouse pointer
      * to hand, because it is link :)
      */
-    cursor:pointer;
+    cursor: pointer;
 
+}
+
+/**
+ * style for center box
+ * that contain information
+ *
+ */
+.dataBox {
+    padding: 25px;
+    background-color: rgba(233,233,158, 0.3);
+    width: 80%;
 }
