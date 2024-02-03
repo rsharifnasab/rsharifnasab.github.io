@@ -1,0 +1,24 @@
+$charcolor: #3c3836;
+body {
+    background: #fbf1c7;
+
+    #terminal {
+        color: $charcolor;
+    }
+
+    #user {
+        color: #98971a;
+    }
+
+    #dir {
+        color: #458588;
+    }
+
+    .Typewriter__cursor {
+        color: $charcolor;
+    }
+}
+
+a {
+    color: $charcolor;
+}

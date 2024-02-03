@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas Animated Heart Effect</title>
+    <style type="text/css">
+      canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
+    <body>
+      <canvas id="heart"></canvas>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+      <script>
+        "use strict";
+        var wprRemoveCPCSS = function wprRemoveCPCSS() {
+          var elem;
+          document.querySelector(
+            'link[data-rocket-async="style"][rel="preload"]',
+          )
+            ? setTimeout(wprRemoveCPCSS, 200)
+            : (elem = document.getElementById("rocket-critical-css")) &&
+              "remove" in elem &&
+              elem.remove();
+        };
+        window.addEventListener
+          ? window.addEventListener("load", wprRemoveCPCSS)
+          : window.attachEvent && window.attachEvent("onload", wprRemoveCPCSS);
+      </script>
+      <script
+        src="https://www.html5canvastutorials.com/wp-content/cache/min/1/795d378f090461671da3859188cd8b9f.js"
+        data-minify="1"
+      ></script>
+      <noscript
+        ><link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=PT%20Sans%7CLato%3A400%2C700%2C400italic%2C700italic%7COswald%3A400%2C700&display=swap" /><link
+          rel="stylesheet"
+          href="https://www.html5canvastutorials.com/wp-content/cache/min/1/d94d61c3c9378c3a73090741906359ca.css"
+          media="all"
+          data-minify="1" /><link
+          rel="stylesheet"
+          href="/libraries/codeMirror/lib/codemirror.css"
+      /></noscript>
+    </body>
+  </head>
+</html>

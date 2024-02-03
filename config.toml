@@ -1,0 +1,58 @@
+baseURL = 'http://rsharifnasab.ir/'
+languageCode = 'en-us'
+title = "Roozbeh's Shell"
+
+
+
+[Params]
+
+
+[Params.Navbar]
+use = false
+
+[Params.Terminal]
+scheme = "shell-ubuntu"
+userName = "Roozbeh"
+pcName = "PC"
+workDir = "Desktop"
+profile = "profile.txt"
+
+
+stdoutDelay = 6
+commandDelay = 35
+
+
+description = """
+Hi, I am Roozbeh!
+Nice to meet you.
+"""
+
+[Params.Tree]
+use = true
+folderName = "my_projects"
+
+files = [
+    [ "My Dotfiles", "https://github.com/rsharifnasab/dotfiles"],
+    [ "My learning resources", "https://github.com/rsharifnasab/my-learning"],
+    [ "My Teaching Slides & Contents", "https://github.com/rsharifnasab/my-teaching"],
+    [ "B.Sc Project: Distributed Code Judge", "https://github.com/rsharifnasab/DJ"],
+
+    [ "Fault localization with Complex Network Techniques", "https://github.com/rsharifnasab/complex-network-fault-localization"],
+    #[ "Fat Tree simulator", "https://github.com/rsharifnasab/FatTreeSimulator"],
+    [ "Simple Networkx wrapper", "https://github.com/rsharifnasab/complex-network-analysis"],
+    [ "Simple shell implementation in go", "https://github.com/rsharifnasab/KittySH"],
+    [ "Link State Protocol Simulation", "https://github.com/rsharifnasab/go-linkstate-simulation"],
+    [ "SMTP Client with pure Go", "https://github.com/rsharifnasab/go-smtp-client"],
+    [ "HTTP Server on socket with Pure Go", "https://github.com/rsharifnasab/go-socket-http-server"],
+    [ "HTTP Client on socket with pure Java", "https://github.com/rsharifnasab/java-http-client"],
+    [ "Simple CRUD with Go+Echo", "https://github.com/rsharifnasab/go-crud"],
+    [ "Sleeping barber implementation with C", "https://github.com/rsharifnasab/os_project"],
+    [ "Othello AI with MinMax in Python", "https://github.com/rsharifnasab/sbu_AI_othello"],
+    [ "Create WordCloud for recent Twitter tweets", "https://github.com/rsharifnasab/create_word_cloud"],
+    [ "Simple Compiler for an imperative language", "https://github.com/rsharifnasab/sbu_compiler"],
+    [ "HTML Syntax highlighter an imperative language", "https://github.com/rsharifnasab/syntax-highlighter"],
+    [ "Simple VI implementation with Pure java", "https://github.com/rsharifnasab/sbu_vi_limited"],
+    [ "Client-Server Gmail implementation with Java-FX", "https://github.com/rsharifnasab/SBU_Gmail"],
+    [ "JetPack JoyRide with SDL", "https://github.com/rsharifnasab/sbu_JetPackJoyRide"],
+    [ "2Cars game with SDL", "https://github.com/rsharifnasab/sbu_2cars"]
+]

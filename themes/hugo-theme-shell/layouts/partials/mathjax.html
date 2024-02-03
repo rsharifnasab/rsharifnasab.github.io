@@ -1,0 +1,13 @@
+<script>
+    window.MathJax = {
+        CommonHTML: { linebreaks: { automatic: true } },
+        tex: {
+            inlineMath: [ ['$', '$'], ['\\(','\\)'] ],
+            displayMath: [ ['$$','$$'], ['\\[', '\\]'] ],
+            processEscapes: false,
+            noUndefined: { attributes: { mathcolor: 'red', mathbackground: '#FFEEEE', mathsize: '90%' } } },
+        messageStyle: 'none'
+};
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-svg.js"></script>
